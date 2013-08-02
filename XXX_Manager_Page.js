@@ -283,7 +283,7 @@ var XXX_Manager_Page =
 			
 			XXX_DOM_NativeEventDispatcher.addEventListener(document, 'gesturestart', function (nativeGestureEvent) { XXX_Manager_Page.gestureStart(nativeGestureEvent); });			
 			XXX_DOM_NativeEventDispatcher.addEventListener(document, 'gesturechange', function (nativeGestureEvent) { XXX_Manager_Page.gestureChange(nativeGestureEvent); });			
-			XXX_DOM_NativeEventDispatcher.addEventListener(document, 'gestureend', function () { XXX_Manager_Page.gestureEnd(nativeGestureEvent); });
+			XXX_DOM_NativeEventDispatcher.addEventListener(document, 'gestureend', function (nativeGestureEvent) { XXX_Manager_Page.gestureEnd(nativeGestureEvent); });
 		}
 		
 		
@@ -891,6 +891,8 @@ var XXX_Manager_Page =
 	
 	update: function ()
 	{
+		if (XXX_JS.debug)
+		{
 			var screenInformation = 'screen: ';
 			screenInformation += ' ' + this.screen.size.width + 'x' + this.screen.size.height;
 			screenInformation += ' | ' + this.screen.orientation;
@@ -927,7 +929,8 @@ var XXX_Manager_Page =
 				touchInformation += '<br>';
 			}
 						
-			XXX_DOM.setInner('liveDebugOutput', screenInformation + pageInformation + viewPortInformation + mouseInformation + touchInformation);
+			XXX_JS.liveDebugOutput(screenInformation + pageInformation + viewPortInformation + mouseInformation + touchInformation);
+		}
 	}
 };
 
