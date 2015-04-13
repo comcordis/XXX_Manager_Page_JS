@@ -1,0 +1,6 @@
+project:XXX_Manager_Page_JS
+deployEnvironment:development
+checkout:master
+commitHash:fcbff9296996a496ee14a7416a8e1e510d74f262
+timestamp:2015-04-13T09:44:49Z
+deployer:operations
